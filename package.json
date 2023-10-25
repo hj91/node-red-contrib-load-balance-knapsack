@@ -1,0 +1,31 @@
+{
+  "name": "node-red-contrib-load-balance-knapsack",
+  "version": "1.0.0",
+  "description": "A Node-RED node that load balances electric consumption based on the knapsack algorithm.",
+  "main": "load-balance-knapsack.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hj91/node-red-contrib-load-balance-knapsack.git"
+  },
+  "keywords": [
+    "node-red",
+    "knapsack",
+    "load-balance",
+    "electric"
+  ],
+  "author": "Harshad Joshi",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/hj91/node-red-contrib-load-balance-knapsack/issues"
+  },
+  "homepage": "https://github.com/hj91/node-red-contrib-load-balance-knapsack#readme",
+  "node-red": {
+    "nodes": {
+      "load-balance-knapsack": "load-balance-knapsack.js"
+    }
+  }
+}
+
