@@ -1,0 +1,162 @@
+[
+    {
+        "id": "cdc11b2991c4475d",
+        "type": "tab",
+        "label": "Knapsack Load Balancing",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "d465650b.074978",
+        "type": "debug",
+        "z": "cdc11b2991c4475d",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 810,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "c31421985bb501f0",
+        "type": "load-balance-knapsack",
+        "z": "cdc11b2991c4475d",
+        "name": "",
+        "x": 530,
+        "y": 300,
+        "wires": [
+            [
+                "d465650b.074978"
+            ]
+        ],
+        "icon": "font-awesome/fa-balance-scale"
+    },
+    {
+        "id": "553a80114f21147b",
+        "type": "mqtt in",
+        "z": "cdc11b2991c4475d",
+        "name": "",
+        "topic": "machine1",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "fcbc57d7fb1884bd",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 200,
+        "y": 200,
+        "wires": [
+            [
+                "c31421985bb501f0"
+            ]
+        ]
+    },
+    {
+        "id": "3f79ee22efcdf85f",
+        "type": "mqtt in",
+        "z": "cdc11b2991c4475d",
+        "name": "",
+        "topic": "machine2",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "fcbc57d7fb1884bd",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 200,
+        "y": 260,
+        "wires": [
+            [
+                "c31421985bb501f0"
+            ]
+        ]
+    },
+    {
+        "id": "da218eadb025b51b",
+        "type": "mqtt in",
+        "z": "cdc11b2991c4475d",
+        "name": "",
+        "topic": "machine3",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "fcbc57d7fb1884bd",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 200,
+        "y": 320,
+        "wires": [
+            [
+                "c31421985bb501f0"
+            ]
+        ]
+    },
+    {
+        "id": "2de18416ab896a11",
+        "type": "mqtt in",
+        "z": "cdc11b2991c4475d",
+        "name": "",
+        "topic": "max_load_capacity",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "fcbc57d7fb1884bd",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 230,
+        "y": 400,
+        "wires": [
+            [
+                "c31421985bb501f0"
+            ]
+        ]
+    },
+    {
+        "id": "567a0d4e8147ef06",
+        "type": "comment",
+        "z": "cdc11b2991c4475d",
+        "name": "Load Balancing using Knapsack 0/1 Algorithm",
+        "info": "This node uses Knapsack 0/1 Algorithm to balance loads and in this example, we feed machine power load using mqtt topics and it calculates all incoming values and compares it with the value obtained from max_load_capacity - on receiving this value, the node gives out which of the machines should be included for running ",
+        "x": 310,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "fcbc57d7fb1884bd",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "localhost",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    }
+]
